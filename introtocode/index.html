@@ -1,0 +1,507 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Introduction to Code</section>
+				<section>
+					<h2>Welcome!</h2>
+					<p>Who are you? What is your experience with technology? What would you like to get out of this class?</p>
+				</section>
+				<section>
+					<h2>What we'll learn</h2>
+					<ul>
+						<li class="fragment">High level overview of web development</li>
+						<li class="fragment">Basic web technologies</li>
+						<li class="fragment">Creating and deploying a small web app</li>
+						<li class="fragment">And plenty in between</li>
+					</ul>
+				</section>
+				<section>
+					<h3>What happens when you go to a website?</h3>
+				</section>
+				<section>
+					<h3>The World Wide Web</h3>
+					<img class="fragment" style="border:none" src="images/clientserver.png"/>
+				</section>
+				<section>
+					<h2 class="fragment">Domain Name Servers</h2>
+					<span class="fragment">A DNS takes a user friendly <b>domain name</b> and translates it into an <b>Internet Protocol (IP) Address</b></span>
+				</section>
+				<section  width="1000px">
+					<h3>The Server and You (the Client)</h3>
+					<img class="fragment" style="border:none;width:300px;height:500px;float:left;" src="images/waiterserver.jpg"/>
+					<span class="fragment" style="width:650px;float:left">
+						<ul>
+							<li style="padding-bottom:20px;padding-top:30px;">The server is where the website code is stored</li>
+							<li style="padding-bottom:20px">The client consumes the code</li>
+							<li style="padding-bottom:20px">The client can make requests to the server</li>
+							<li>The client can also do things on its own</li>
+						</ul>
+					</span>
+				</section>
+				<section>
+					<h3>Chrome, Firefox, Internet Explorer, and more</h3>
+					The browser is on the client computer to help consume and execute code. It will fetch from the website's server, then render the result.
+				</section>
+				<section>
+					<h3>Every browser handles code differently</h3>
+					Code versions, handling of resources
+				</section>
+				<section>
+					<h3>Coding on the server side?</h3>
+					<span class="fragment" style="width:550px;float:left">
+						<ul>
+							<li style="padding-bottom:20px;padding-top:30px;">Ruby</li>
+							<li style="padding-bottom:20px">Java</li>
+							<li style="padding-bottom:20px">C/C++</li>
+							<li>Databases! (storage)</li>
+						</ul>
+					</span>
+					<img class="fragment" style="border:none;width:400px;height:500px;float:left;" src="images/serverroom.jpg"/>
+				</section>
+				<section>
+					<h3>The client side?</h3>
+					<span class="fragment" style="width:550px;float:left">
+						<ul>
+							<li style="padding-bottom:20px;padding-top:30px;">HTML</li>
+							<li style="padding-bottom:20px">CSS</li>
+							<li style="padding-bottom:20px">Flash</li>
+							<li>Javascript</li>
+						</ul>
+					</span>
+					<span class="fragment" style="width:250px;float:left; padding-top:50px">
+						Won't be storing any sensitive information
+					</span>
+				</section>
+				<section>
+					<h3>Putting them together is not always free</h3>
+					<ul>
+						<li class="fragment" style="padding-bottom:20px;padding-top:30px;">Hosting a server</li>
+						<li class="fragment" style="padding-bottom:20px">Purchasing a domain name</li>
+						<li class="fragment" style="padding-bottom:20px">Time it takes to code, or hire</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Which languages and why?</h2>
+				</section>
+				<section>
+					<h3>Plenty to choose from with plenty why</h3>
+					Server Side<br>
+					<ul>
+						<li class="fragment" style="padding-bottom:20px;padding-top:30px;">Speed</li>
+						<li class="fragment" style="padding-bottom:20px">Complexity</li>
+						<li class="fragment" style="padding-bottom:20px">Scalability</li>
+					</ul>
+				</section>
+				<section>
+					Client Side<br>
+					<ul>
+						<li class="fragment" style="padding-bottom:20px;padding-top:30px;">Ease</li>
+						<li class="fragment" style="padding-bottom:20px">Availability and Flexibility</li>
+						<li class="fragment" style="padding-bottom:20px">Browser compatibility</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Let's get started!</h1>
+				</section>
+				<section>
+					<h3>Download these:</h3>
+					<div style="margin-bottom:20px"> Google Chrome </div> <img style="border:none;width:200px;height:200px" src="images/chromeicon.png"/><br>
+					<div style="margin-bottom:20px"> Atom </div> <img style="border:none;width:200px;height:200px" src="images/atomicon.png"/><br>
+				</section>
+				<section>
+					<h1>HTML</h1>
+				</section>
+				<section>
+					<h3>Hyper-text Markup Language</h3>
+					<img class="fragment" style="border:none;width:400px;height:500px;float:left;" src="images/legoblocks.jpeg"/>
+					<div style="padding-left:50px">
+						<span class="fragment">HTML elements are the building blocks of websites</span> <br><br>
+						<span class="fragment">Elements consist of tags and sometimes tag content<br><br><span>
+						<span class="fragment">Browsers render these elements<br><span>
+					</div>
+				</section>
+				<section>
+					<img style="border:none;" src="images/ptag.png"/>
+				</section>
+				<section>
+					<h3>Let's open the text editor</h3>
+				</section>
+				<section>
+					<h2>More tags!</h2>
+					Open your browser
+				</section>
+				<section>
+					<h3>Don't panic</h3>
+				</section>
+				<section>
+					<h3>Paragraphs</h3>
+						Whitespace in your text editor is only to make your code readable<br><br>
+						<code style="border:solid;background-color:white;font-size:80%">&amp;nbsp;</code>&nbsp; - Extra spaces <br>
+						<code style="border:solid;background-color:white;font-size:80%">&lt;br&gt;</code> - Break!
+				</section>
+				<section>
+					<h3>Headings</h3>
+					Some tags have preset sizes for text that rank importance
+				</section>
+				<section>
+					<h3>Attributes on Elements</h3>
+				</section>
+				<section>
+					<h3>Links</h3>
+				</section>
+				<section>
+					<h3>Images</h3>
+					explain file paths
+				</section>
+				<section>
+					<h3>Your first task!</h3>
+					Choose a subject and create an HTML file that holds information about it. It should contain:<br><br>
+					<ul style="font-size:90%">
+						<li>Website title</li>
+						<li>A heading with the topic</li>
+						<li>A short paragraph explaining why you chose the topic</li>
+						<li>An image that represents the topic</li>
+						<li>A link to a website that has more information about the topic</li>
+					</ul><br><br>
+					<span style="font-size:90%">Bonus: Add an additional image whose source is a web page</span>
+				</section>
+				<section>
+					<h3>Nesting tags</h3>
+				</section>
+				<section>
+					<h3>Tags within tags within tags...</h3>
+					<span style="border:none;width:400px;height:500px;float:left;"><img class="fragment" src="images/nesting.png"/></span>
+					<span class="fragment">You can nest elements in order to apply multiple conditions to them</span><br><br>
+					<span class="fragment">This raises the importance of where you open and close the tags</span>
+					Remove - note, parents vs child
+				</section>
+				<section>
+					<h3>Spice up your paragraph</h3>
+					<code style="border:solid;background-color:white;font-size:80%">&lt;b&gt;</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">&lt;i&gt;</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">&lt;u&gt;</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">&lt;em&gt;</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">&lt;mark&gt;</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">&lt;del&gt;</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">&lt;sub&gt;</code><br>
+					Bonus: Nest some of these tags
+				</section>
+				<section>
+					<h3>Lists</h3>
+					Display a set of information simply with lists
+				</section>
+				<section>
+					<h3>This is an unordered list</h3>
+					<ul>
+						<li class="fragment">All unordered lists start with the tag &lt;ul&gt;</li>
+						<li class="fragment">Nested in this tag is what will denote each item of the list</li>
+						<li class="fragment">By default, the items are marked with a black circle</li>
+					</ul>
+				</section>
+				<section>
+					<h3>This is an ordered list</h3>
+					<ol>
+						<li class="fragment">All ordered lists start with the tag &lt;ol&gt;</li>
+						<li class="fragment">They use the same child tag to list items</li>
+						<li class="fragment">By default, the items are marked with numbers</li>
+						<li class="fragment">They can be given attributes to change the marker</li>
+					</ol>
+				</section>
+				<section>
+					<h3>Let's code</h3>
+					Add four more images and links to your web page <br><br>
+					Group each image with a heading and a link<br><br>
+					Change your short paragraphs into a list of information about this image
+				</section>
+				<section>
+					<h3>Tables</h3>
+					<span style="float:left;">Tables represent information that might be too complex to just display in a list.<br><br>
+					They are made up of rows and columns, just like spreadsheets</span>
+					<span style="border:none;width:400px;height:500px;float:left;"><img class="fragment" src="images/table.gif"/></span>
+					<span class="fragment" style="float:left;padding-left:50px;padding-top:80px">Take a look at this nest</span>
+				</section>
+				<section>
+					<h3>What information can you display in a table on your web page?</h3>
+				</section>
+
+
+				<section>
+					<h3>CSS</h3>
+				</section>
+				<section>
+					<h3>Adding style to elements</h3>
+					Web developers and designers use <b>Cascading Style Sheets</b> to make webpages visually pleasing
+				</section>
+				<section>
+					<h3>Why use CSS?</h3>
+					To describe the look and formatting of a document written in a markup language, eg. hypertext markup language (html)<br><br>
+					We can change the colors, sizes, positions, and formatting of any of our HTML elements  including the body, paragraphs, links, and images
+				</section>
+				<section>
+					<h3>You can add style directly onto an element</h3>
+				</section>
+				<section>
+					<h3>Block and inline elements</h3>
+					&lt;div&gt; and &lt;span&gt; are used to better group your elements and can apply style to their children<br><br>
+					<ul>
+						<li class="fragment">&lt;div&gt; is a block element. Block elements always start on a new line and fill the width of their space</li><br>
+						<li class="fragment">&lt;span&gt; is an inline element and neither starts on a new line nor fills the space</li>
+					</ul>
+				</section>
+				<section>
+					&lt;div&gt; is general used for grouping and containing elements<br><br>
+					&lt;span&gt; is often used for applying group styling to text
+				</section>
+				<section>
+					<h3>Organize it better</h3>
+					<span class="fragment">You can ddd style scripts to your code to better organize your CSS<br><br></span>
+					<span class="fragment">This can allow you to add more complexity<br>
+					It also helps prevent code duplication</span>
+				</section>
+				<section>
+					<h3>The structure</h3>
+					<span><img style="border:none;width:500px;height:300px;" class="fragment" src="images/csssyntax.png"/></span>
+				</section>
+				<section>
+					<h3>Identifying your element</h3>
+					Instead of grouping by tags, you can decide how you group your elements by adding attributes to your tags - IDs and Classes
+				</section>
+				<section>
+					<h3>ID vs Class</h3>
+					<ul style="width: 410px; left: 49px;" class="fragment">
+            <li>Ids are unique</li>
+            <li>Each element can have only one ID</li>
+            <li>Each page can have only one element with that ID</li>
+        	</ul>
+
+					<ul style="width: 410px; left: 499px;height: auto;" class="fragment">
+            <li>Classes are not unique</li>
+            <li>You can use the same class on multiple elements.</li>
+            <li>You can use multiple classes on the same element.</li>
+        </ul>
+				</section>
+				<section>
+					<h3>Backgrounds and Colors</h3>
+					<code style="border:solid;background-color:white;font-size:80%">background-color:grey</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">background-image:url("gradient_bg.png");</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">color:#FF5733</code><br>
+					www.color-hex.com<br><br>
+					www.paletton.com
+				</section>
+				<section width="800px">
+					<h3>Let's try jazzing up font again</h3>
+					Here are some more properties<br><br>
+					<code style="border:solid;background-color:white;font-size:80%">text-align: center; //left; right;</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">text-decoration: overline; //line-through;</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">text-transform: uppercase; //capitalize;</code><br>
+					<code style="border:solid;background-color:white;font-size:80%">font-size: 15em;</code><br>
+				</section>
+				<section>
+					<h3>Positioning</h3>
+					floats, direction
+				</section>
+				<section>
+					<h3>Borders</h3>
+				</section>
+				<section>
+					<h3>Margins and Padding</h3>
+				</section>
+				<section>
+					<h3>See and try your changes</h3>
+					Webkit Inspector
+				</section>
+				<section>
+					<h3>Tooltips</h3>
+					<span class="fragment"></span>
+				</section>
+				<section>
+					<h3>Group things together</h3>
+					Group and center your headings with their respective images
+					Add additional text below, jazz that text up!
+					Fun things you can do is to highlight and describe words with tooltips
+				</section>
+				<section>
+					<h3></h3>
+				</section>
+				<section>
+					<h3>Icons</h3>
+				</section>
+				<section>
+					<h3>More positioning</h3>
+					Absolute, fixed, relative
+				</section>
+				<section>
+					<h3>Display</h3>
+					display inline block
+				</section>
+				<section>
+					<h3>Fade</h3>
+					Fade an animation
+				</section>
+				<section>
+					<h3>Display</h3>
+					display inline block
+				</section>
+
+				<section>
+					Day 2, the terminal
+
+					What is the terminal
+					Navigate (cd, ls, pwd)
+				</section>
+				<section>
+					<h3></h3>
+				</section>
+				<section>
+					<h3>What is the terminal?</h3>
+				</section>
+				<section>
+					<h3>What is the terminal used for?</h3>
+				</section>
+				<section>
+					<h3>Isn't there an friendlier version?</h3>
+				</section>
+				<section>
+					<h3>Mac vs Windows</h3>
+				</section>
+				<section>
+					<h3>Basic commands</h3>
+				</section>
+				<section>
+					<h3></h3>
+				</section>
+
+				<section>
+					Git and github
+
+					What is version control
+					Github pages
+					Github the website
+					Git in the terminal
+				</section>
+				<section>
+					<h3>What is version control?</h3>
+				</section>
+				<section>
+					<h3>What is git?</h3>
+				</section>
+				<section>
+					<h3>Install Git</h3>
+				</section>
+				<section>
+					<h3>What is github?</h3>
+				</section>
+				<section>
+					<h3>Get github account</h3>
+					use set up to set up ssh and stuff
+				</section>
+				<section>
+					<h3>Create pages repository</h3>
+				</section>
+				<section>
+					<h3>Grab pages repository, copy index.html we've been working out of</h3>
+				</section>
+				<section>
+					<h3>Git commands and why</h3>
+				</section>
+				<section>
+					<h3>Branching</h3>
+				</section>
+				<section>
+					<h3>Forking</h3>
+				</section>
+
+				<section>
+					Javascript
+
+					What is javascript used for
+					What are variables
+					What are functions
+					Pre existing functions
+					Making our own function
+				</section>
+				<section>
+					<h3>What is javascript</h3>
+				</section>
+				<section>
+					<h3>What is it used for</h3>
+				</section>
+				<section>
+					<h3>Variables</h3>
+				</section>
+				<section>
+					<h3>Variable types</h3>
+				</section>
+				<section>
+					<h3>Console</h3>
+				</section>
+				<section>
+					<h3>Functions</h3>
+				</section>
+				<section>
+					<h3>The DOM</h3>
+				</section>
+				<section>
+					<h3>Interacting with the DOM</h3>
+				</section>
+				<section>
+					<h3>Adding functionality</h3>
+				</section>
+				<section>
+					<h3></h3>
+				</section>
+				<section>
+					<h3></h3>
+				</section>
+				<section>
+					<h3>Slideshow time</h3>
+				</section>
+				<section>
+					<h3></h3>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
