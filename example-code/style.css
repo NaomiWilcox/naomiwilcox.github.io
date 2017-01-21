@@ -1,0 +1,14 @@
+#page-header {
+  height: 80px;
+  width: 100%;
+  background-color: red;
+}
+
+.logo {
+  width: 200px;
+  border-style: solid;
+}
+
+.logo-height {
+  height: 200px;
+}
